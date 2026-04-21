@@ -15,7 +15,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-black/65" />
       </div>
 
-      {/* CONTENT */}
+      {/* CONTEÚDO */}
       <div className="relative z-10 container mx-auto px-4 pt-36 pb-28">
         <div className="max-w-2xl text-white">
 
@@ -35,17 +35,17 @@ export function Hero() {
 
           {/* SUB */}
           <p className="mt-5 text-sm text-white/80 md:text-base">
-            Roteiros, passeios e experiências para você aproveitar sem preocupação.
+            Roteiros e experiências para você aproveitar sem preocupação.
           </p>
 
           {/* BOTÕES */}
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
-            {/* WHATSAPP */}
+            {/* WHATSAPP (PRINCIPAL - ROXO) */}
             <Button
               size="lg"
               asChild
-              className="rounded-full px-8 py-6 text-base font-semibold bg-green-600 hover:bg-green-700 text-white"
+              className="rounded-full px-8 py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-white"
             >
               <a
                 href="https://wa.me/5551981699277"
@@ -58,12 +58,11 @@ export function Hero() {
               </a>
             </Button>
 
-            {/* DESTINOS */}
+            {/* DESTINOS (DOURADO) */}
             <Button
               size="lg"
               asChild
-              variant="outline"
-              className="rounded-full border-white/30 px-8 py-6 text-base text-white"
+              className="rounded-full px-8 py-6 text-base font-semibold bg-accent hover:bg-accent/90 text-primary"
             >
               <a href="#destinos" className="flex items-center gap-2">
                 Ver destinos
