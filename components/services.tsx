@@ -1,174 +1,70 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Check, Info, MapIcon, MoonStar, Shield, Sparkles, Train } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Train, MoonStar, MapIcon } from "lucide-react"
 
 const services = [
   {
     icon: Train,
-    title: "Tour Uva e Vinho + Maria Fumaça",
-    description:
-      "História, cultura e sabores em um passeio completo pela Serra Gaúcha, com degustações e experiências autênticas.",
-    color: "bg-primary/10",
-    highlights: [
-      "Passeio de Maria Fumaça com degustações a bordo",
-      "Visita à Epopeia Italiana",
-      "Parada na Queijaria Fetina de Formaio",
-      "Tour na Vinícola Aurora",
-      "Almoço italiano no Cantina Dell Vale Ristorante",
-    ],
-    includes: ["Transporte", "Passeio de Maria Fumaça", "Degustações", "Almoço italiano"],
+    title: "Uva e Vinho + Trem",
+    desc: "Passeio completo com degustação e Maria Fumaça",
   },
   {
     icon: MoonStar,
-    title: "Noite Alemã – Kerbfest",
-    description:
-      "Uma imersão na cultura alemã em Nova Petrópolis com gastronomia típica, música e danças tradicionais.",
-    color: "bg-primary/10",
-    highlights: [
-      "Restaurante Lindenhoff com jantar típico",
-      "Café colonial completo",
-      "Show com músicas e danças alemãs",
-    ],
-    includes: ["Transporte", "Jantar típico", "Show cultural"],
+    title: "Noite Alemã",
+    desc: "Jantar típico + show cultural",
   },
   {
     icon: MapIcon,
-    title: "City Tour Gramado e Canela - Coletivo",
-    description:
-      "Roteiro completo pelos principais pontos de Gramado e Canela, com saídas diárias e guias experientes.",
-    color: "bg-primary/10",
-    highlights: [
-      "Gramado: Fábrica de Cristais, Lago Negro, Rua Torta, Mini Mundo e muito mais",
-      "Canela: Bondinhos Aéreos/Cascata do Caracol, Catedral de Pedra, Mundo Gelado e pontos panorâmicos",
-      "Saídas entre 7h40 e 8h30 com retorno até às 18h",
-      "Embarque em hotéis e pousadas de Gramado e Canela (zona urbana)",
-    ],
-    includes: ["Transporte com motorista/guia"],
-    exclusions: ["Almoço", "Bebidas", "Ingressos nos pontos de visitação"],
+    title: "City Tour",
+    desc: "Principais pontos de Gramado e Canela",
   },
 ]
 
+const whatsapp = "5551981699277"
+
 export function Services() {
   return (
-    <section id="servicos" className="py-32 bg-background relative overflow-hidden">
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+    <section id="servicos" className="py-24">
+      <div className="container mx-auto px-4">
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-20">
-          <div className="relative mb-10 overflow-hidden rounded-3xl border border-accent/20 bg-gradient-to-br from-primary/5 via-background to-accent/10 px-6 py-8 text-left shadow-xl shadow-primary/10">
-            <div className="absolute -right-12 -top-16 h-40 w-40 rounded-full bg-accent/20 blur-3xl" />
-            <div className="absolute -left-16 bottom-0 h-32 w-32 rounded-full bg-primary/15 blur-3xl" />
-            <div className="relative grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-              <div className="space-y-4">
-                <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                  Transfer Aeroporto
-                </span>
-                <p className="text-2xl md:text-3xl font-serif font-semibold text-foreground">
-                  A ida no aeroporto é feita de carro.
-                </p>
-                <p className="text-muted-foreground max-w-xl">
-                  Conforto e praticidade para chegar ao seu destino com tranquilidade.
-                </p>
-              </div>
-              <div className="relative">
-                <div className="absolute -inset-2 rounded-3xl border border-accent/20 bg-white/60 blur-lg" />
-                <div className="relative overflow-hidden rounded-3xl">
-                  <img
-                    src="/carro.jpg"
-                    alt="Carro para transfer aeroporto"
-                    className="h-52 w-full object-cover shadow-lg"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent mb-6">
-            <Sparkles size={16} />
-            <span className="text-sm font-semibold uppercase tracking-wide">Serviços</span>
-          </div>
-          <h2 className="font-serif text-5xl md:text-6xl font-bold mb-6 text-balance">
-            Serviços <span className="text-primary">Incríveis</span>
+        {/* TITULO */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold">
+            Serviços principais
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
-            Cuidamos de cada detalhe para que você aproveite momentos inesquecíveis
+          <p className="text-muted-foreground mt-2">
+            Escolha e fale direto no WhatsApp
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card
-              key={index}
-              className="group relative hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 border-2 overflow-hidden bg-card"
-            >
-              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {/* GRID */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {services.map((s, i) => (
+            <Card key={i} className="p-6 text-center">
 
-              <CardHeader className="relative z-10">
-                <div
-                  className={`w-16 h-16 rounded-2xl ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg relative`}
+              <s.icon size={32} className="mx-auto mb-4 text-primary" />
+
+              <h3 className="font-semibold text-xl mb-2">
+                {s.title}
+              </h3>
+
+              <p className="text-muted-foreground text-sm mb-4">
+                {s.desc}
+              </p>
+
+              <Button asChild className="w-full rounded-full">
+                <a
+                  href={`https://wa.me/${whatsapp}?text=Quero saber sobre ${s.title}`}
+                  target="_blank"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <service.icon className="text-primary relative z-10" size={32} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-2xl font-bold font-serif mb-2 group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-              </CardHeader>
-              <CardContent className="relative z-10 space-y-4">
-                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  Ver detalhes
+                </a>
+              </Button>
 
-                {service.highlights && (
-                  <ul className="space-y-2 text-muted-foreground">
-                    {service.highlights.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex gap-2 items-start">
-                        <Check size={16} className="mt-0.5 text-primary" />
-                        <span className="leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {service.includes && (
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                      <Shield size={16} />
-                      <span>Incluso</span>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {service.includes.map((item, itemIndex) => (
-                        <span
-                          key={itemIndex}
-                          className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/10"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {service.exclusions && (
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-2 text-sm font-semibold text-accent">
-                      <Info size={16} />
-                      <span>Não incluso</span>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {service.exclusions.map((item, itemIndex) => (
-                        <span
-                          key={itemIndex}
-                          className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium border border-accent/10"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </CardContent>
             </Card>
           ))}
         </div>
+
       </div>
     </section>
   )
