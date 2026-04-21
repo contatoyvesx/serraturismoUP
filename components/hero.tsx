@@ -1,74 +1,73 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles, PhoneCall } from "lucide-react"
+import { ArrowRight, PhoneCall, MapPin } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-screen items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           src="/stunning-mountain-landscape-at-golden-hour-with-dr.jpg"
-          alt="Mountain landscape"
-          className="w-full h-full object-cover scale-105"
+          alt="Paisagem da serra"
+          className="h-full w-full object-cover"
         />
+        <div className="absolute inset-0 bg-black/45" />
       </div>
 
-      <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/12 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-primary/8 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
-      </div>
+      <div className="relative z-10 container mx-auto px-4 pt-28 pb-20">
+        <div className="max-w-3xl text-white">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md">
+            <MapPin size={16} />
+            <span className="text-sm font-medium">Experiências na Serra com atendimento personalizado</span>
+          </div>
 
-      <div className="container mx-auto px-4 z-10 text-center relative">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/85 backdrop-blur-md border border-accent/50 text-primary mb-8 shadow-sm animate-fade-in">
-          <Sparkles size={16} className="text-accent" />
-          <span className="text-sm font-medium">Experiências Premium desde 2010</span>
-        </div>
+          <h1 className="text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
+            Explore a Serra com mais conforto, segurança e paisagens inesquecíveis
+          </h1>
 
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-balance leading-tight">
-          <span className="text-accent drop-shadow-2xl">Descubra o</span>
-          <br />
-          <span className="text-accent drop-shadow-2xl">Extraordinário</span>
-        </h1>
+          <p className="mt-6 max-w-2xl text-base text-white/85 md:text-lg">
+            Passeios, roteiros e experiências pensadas para quem quer aproveitar o melhor da região com praticidade e suporte do início ao fim.
+          </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Button
-            size="lg"
-            asChild
-            className="group bg-primary hover:bg-primary/90 text-white text-lg px-10 py-7 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-[0_10px_30px_rgba(93,24,130,0.25)]"
-          >
-            <a href="#destinos" className="flex items-center">
-              Explorar Destinos
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-            </a>
-          </Button>
-          <Button
-            size="lg"
-            asChild
-            className="bg-accent hover:bg-accent/90 text-primary text-lg px-10 py-7 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-[0_12px_30px_rgba(243,217,166,0.25)]"
-          >
-            <a href="https://wa.me/5551981699277" target="_blank" rel="noreferrer" className="flex items-center gap-2">
-              <PhoneCall size={20} /> WhatsApp
-            </a>
-          </Button>
-        </div>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Button
+              size="lg"
+              asChild
+              className="rounded-full px-8 py-6 text-base font-semibold"
+            >
+              <a href="#destinos" className="flex items-center gap-2">
+                Ver destinos
+                <ArrowRight size={18} />
+              </a>
+            </Button>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto bg-secondary/80 backdrop-blur-md rounded-2xl p-8 shadow-lg shadow-primary/5">
-          {[
-            { value: "15+", label: "Anos de Experiência" },
-            { value: "950+", label: "Viajantes Felizes" },
-          ].map((stat, i) => (
-            <div key={i} className="text-primary">
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-primary drop-shadow-lg">
-                {stat.value}
-              </div>
-              <div className="text-sm md:text-base text-foreground/80 font-medium">{stat.label}</div>
+            <Button
+              size="lg"
+              asChild
+              variant="outline"
+              className="rounded-full border-white/30 bg-white/10 px-8 py-6 text-base font-semibold text-white hover:bg-white/20 hover:text-white"
+            >
+              <a
+                href="https://wa.me/5551981699277"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2"
+              >
+                <PhoneCall size={18} />
+                Falar no WhatsApp
+              </a>
+            </Button>
+          </div>
+
+          <div className="mt-12 grid max-w-2xl grid-cols-2 gap-4 md:gap-6">
+            <div className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-md">
+              <div className="text-3xl font-bold md:text-4xl">15+</div>
+              <div className="mt-1 text-sm text-white/80">Anos de experiência</div>
             </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <div className="w-7 h-12 border-2 border-accent/70 rounded-full flex items-start justify-center p-2 backdrop-blur-sm bg-secondary/25">
-          <div className="w-1.5 h-4 bg-accent rounded-full animate-pulse" />
+            <div className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-md">
+              <div className="text-3xl font-bold md:text-4xl">950+</div>
+              <div className="mt-1 text-sm text-white/80">Viajantes atendidos</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
