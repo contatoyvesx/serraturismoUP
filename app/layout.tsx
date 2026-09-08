@@ -13,6 +13,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id=GTM-KD6TX9HZ'+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KD6TX9HZ');`
 
+const googleAdsScript = `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17709711266');`
+
 export const metadata: Metadata = {
   title: "HA Serra Turismo",
   description:
@@ -46,6 +51,8 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <script dangerouslySetInnerHTML={{ __html: googleTagManagerScript }} />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17709711266" />
+        <script dangerouslySetInnerHTML={{ __html: googleAdsScript }} />
       </head>
       <body className={`font-sans antialiased`}>
         <noscript>
