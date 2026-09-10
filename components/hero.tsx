@@ -29,8 +29,8 @@ export function Hero() {
 
           {/* TITULO */}
           <h1 className="text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
-            Passeios na Serra Gaúcha <br />
-            com conforto e praticidade
+            Transfers, passeios e <br />
+            atendimento personalizado
           </h1>
 
           {/* SUB */}
@@ -41,7 +41,6 @@ export function Hero() {
           {/* BOTÕES */}
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
-            {/* WHATSAPP (PRINCIPAL - ROXO) */}
             <Button
               size="lg"
               asChild
@@ -58,7 +57,6 @@ export function Hero() {
               </a>
             </Button>
 
-            {/* DESTINOS (DOURADO) */}
             <Button
               size="lg"
               asChild
