@@ -29,7 +29,7 @@ export function Hero() {
 
           {/* TITULO */}
           <h1 className="text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
-            Passeios na Serra Gaúcha <br />
+            TESTE DE REDEPLOY — Serra Turismo <br />
             com conforto e praticidade
           </h1>
 
