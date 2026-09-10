@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import "."
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 const inter = Inter({ subsets: ["latin"] })
@@ -54,7 +54,7 @@ export default function RootLayout({
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17709711266" />
         <script dangerouslySetInnerHTML={{ __html: googleAdsScript }} />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body className={`${playfair.className} antialiased`}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KD6TX9HZ"
