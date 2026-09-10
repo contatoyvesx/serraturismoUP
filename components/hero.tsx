@@ -17,7 +17,7 @@ export function Hero() {
 
       {/* CONTEÚDO */}
       <div className="relative z-10 container mx-auto px-4 pt-36 pb-28">
-        <div className="max-w-2xl text-white">
+        <div className="max-w-4xl text-white">
 
           {/* TAG */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 backdrop-blur-sm">
@@ -28,9 +28,12 @@ export function Hero() {
           </div>
 
           {/* TITULO */}
-          <h1 className="text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
-            Transfers, passeios e <br />
-            atendimento personalizado
+          <h1 className="text-4xl font-bold leading-[1.08] md:text-6xl lg:text-7xl">
+            Transfers, passeios e
+            <br />
+            atendimento
+            <br />
+            personalizado
           </h1>
 
           {/* SUB */}
